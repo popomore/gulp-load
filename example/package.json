@@ -1,0 +1,7 @@
+{
+  "name": "gulp-load-example",
+  "version": "0.0.0",
+  "dependencies": {
+    "gulp-son": "*"
+  }
+}
