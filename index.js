@@ -37,6 +37,9 @@ TaskManager.prototype.load = function(moduleName) {
 };
 
 TaskManager.prototype.lookup = function(moduleName) {
+  // set current working directory if moduleName doesn't exist
+  if (!moduleName) moduleName = process.cwd();
+
   if (exists(moduleName)) {
     var s = stat(moduleName);
 
