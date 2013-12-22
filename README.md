@@ -1,5 +1,8 @@
 # Gulp-load
 
+[![Build Status](https://travis-ci.org/popomore/gulp-load.png?branch=master)](https://travis-ci.org/popomore/gulp-load)
+[![Coverage Status](https://coveralls.io/repos/popomore/gulp-load/badge.png)](https://coveralls.io/r/popomore/gulp-load)
+
 Load gulp task just like grunt.loadTasks.
 
 If you want to load plugins automatically, [gulp-load-tasks](https://github.com/jackfranklin/gulp-load-tasks) will be a good choice.
