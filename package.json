@@ -2,6 +2,10 @@
   "name": "gulp-load",
   "version": "0.1.0",
   "description": "Load gulp task just like grunt.loadTasks.",
+  "keywords": [
+    "gulp",
+    "gulpplugin"
+  ],
   "main": "index.js",
   "dependencies": {
     "glob": "~3.2.7"
