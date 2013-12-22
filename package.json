@@ -1,11 +1,8 @@
 {
   "name": "gulp-load",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Load gulp task just like grunt.loadTasks.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "dependencies": {
     "glob": "~3.2.7"
   },
@@ -14,12 +11,14 @@
     "mocha": "~1.8.1",
     "should": "~1.1.0",
     "mocha-lcov-reporter": "~0.0.1",
-    "sinon": "*",
     "coveralls": "~2.0.7",
     "blanket": "~1.1.4"
   },
-  "repository": "",
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/popomore/gulp-load.git"
+  },
+  "author": "popomore <sakura9515@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "make test",
