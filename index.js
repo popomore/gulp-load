@@ -9,18 +9,17 @@ var isWindows = process.platform === 'win32';
 var splitter = isWindows ? ';' : ':';
 
 module.exports = function(gulp) {
-  var task = new Task(gulp);
+  var tm = new TaskManager(gulp);
 
   function loadTasks(moduleName) {
-    debugger;
-    task.load(moduleName);
+    tm.load(moduleName);
   }
 
   gulp.loadTasks = loadTasks;
   return loadTasks;
 };
 
-function Task(gulp) {
+function TaskManager(gulp) {
   // global path
   this.globalPath = process.env['NODE_PATH'] ?
     process.env['NODE_PATH'].split(splitter) : [];
@@ -28,7 +27,7 @@ function Task(gulp) {
   this.gulp = gulp;
 }
 
-Task.prototype.load = function(moduleName) {
+TaskManager.prototype.load = function(moduleName) {
   var gulp = this.gulp;
   this.lookup(moduleName);
   this.tasks.forEach(function(task) {
@@ -37,7 +36,7 @@ Task.prototype.load = function(moduleName) {
   this.tasks = [];
 };
 
-Task.prototype.lookup = function(moduleName) {
+TaskManager.prototype.lookup = function(moduleName) {
   if (exists(moduleName)) {
     var s = stat(moduleName);
 
@@ -68,13 +67,13 @@ Task.prototype.lookup = function(moduleName) {
   }.bind(this));
 };
 
-Task.prototype.lookupTasks = function(modulePath) {
+TaskManager.prototype.lookupTasks = function(modulePath) {
   var tasksPath = join(modulePath, 'tasks');
   var tasks = glob.sync(tasksPath + '/**/*.js');
   this.tasks = this.tasks.concat(tasks);
 };
 
-Task.prototype.lookupDeps = function(modulePath) {
+TaskManager.prototype.lookupDeps = function(modulePath) {
   var pkg = require(join(modulePath, 'package.json'));
   if (pkg && pkg.dependencies) {
     Object.keys(pkg.dependencies).filter(function(f) {
