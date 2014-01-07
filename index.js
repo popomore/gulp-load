@@ -77,6 +77,8 @@ TaskManager.prototype.lookupTasks = function(modulePath) {
 };
 
 TaskManager.prototype.lookupDeps = function(modulePath) {
+  if (!fs.existsSync(modulePath)) return;
+
   var pkg = require(join(modulePath, 'package.json'));
   if (pkg && pkg.dependencies) {
     Object.keys(pkg.dependencies).filter(function(f) {

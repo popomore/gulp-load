@@ -22,4 +22,10 @@ describe('gulp-load', function() {
     load('gulp-load-global');
     should.exist(gulp.tasks['d']);
   });
+
+  it('ignore when not exist', function() {
+    (function () {
+      load(__dirname + '/noexist');
+    }).should.not.throw();
+  });
 });

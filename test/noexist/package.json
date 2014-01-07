@@ -1,0 +1,7 @@
+{
+  "name": "noexist",
+  "version": "0.0.0",
+  "dependencies": {
+    "gulp-sub": "*"
+  }
+}
