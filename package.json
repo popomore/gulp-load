@@ -11,13 +11,12 @@
     "glob": "~3.2.7"
   },
   "devDependencies": {
-    "gulp": "*",
+    "gulp": "~3.5.5",
     "mocha": "~1.8.1",
     "should": "~1.1.0",
     "mocha-lcov-reporter": "~0.0.1",
     "coveralls": "~2.0.7",
     "blanket": "git://github.com/alex-seville/blanket.git#master"
-
   },
   "repository": {
     "type": "git",
