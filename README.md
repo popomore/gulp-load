@@ -5,7 +5,7 @@
 
 Load gulp task just like grunt.loadTasks.
 
-If you want to load plugins automatically, [gulp-load-tasks](https://github.com/jackfranklin/gulp-load-tasks) will be a good choice.
+If you want to load plugins automatically, [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) will be a good choice.
 
 ---
 
